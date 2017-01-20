@@ -53,7 +53,8 @@ class PyqtDemo(QDialog, Ui_PYQTDIALOG):
         
         reader = csv.reader(self.fname,delimiter='\t')
         
-        cnt = 1
+        cnt = 0
+        id_cntDict={}
         
         for line in reader: 
             if len(line)  ==1:         #first line
@@ -61,7 +62,8 @@ class PyqtDemo(QDialog, Ui_PYQTDIALOG):
             elif line[0]=="title":
                 skuIdx=line.index("skuProps")
                 idIdx = line.index("outer_id")
-                print(skuIdx)
+                numIdx = line.index("num")
+                print(skuIdx, numIdx)
             elif line[0]=="宝贝名称":
                     continue
             else:
@@ -79,74 +81,25 @@ class PyqtDemo(QDialog, Ui_PYQTDIALOG):
                 #print(j)
                 if j/sku_cnt <0.5:
                     #self.textEdit.append("%s:%d" %(line[idIdx], cnt))
-                    self.textEdit.append(line[idIdx])
+                    #self.textEdit.append(line[idIdx])
+                    id_cntDict[line[idIdx]]=line[numIdx]
                     cnt+=1
-                
-                
-                
+        #sort by value
+        id_cntDict= sorted(id_cntDict.items(), key=lambda d:d[1])
+        for x in id_cntDict:
+            self.textEdit.append(x[0])
+        
         self.fname.close()    
-        
-       
-            
-        
-             
         
     @pyqtSlot()
     def on_btn3_clicked(self):
         """
         Slot documentation goes here.
         """
-        '''
+        
         # TODO: not implemented yet
         #raise NotImplementedError
-        self.fname = open(self.filename,'r',encoding="utf16")
-        
-        reader = csv.reader(self.fname,delimiter='\t')
-        zm = (self.zmnumber.text())
-        print(zm[2:])
-        find = 0
-        for line in reader: 
-            if len(line) > 33:	
-                if (zm[2:6] in line[33]):
-                     find=1
-                     id = line[36]
-                     picture=line[28]
-                     print(id)
-                     break
-                #else:
-                #     print(line[33])
-                
-        self.fname.close()    
-        
-        if find:
-            netaddr="https://item.taobao.com/item.htm?id=543321968803"
-            listaddr=netaddr.split("=")
-            listaddr[1]=id
-            print(listaddr)
-            netaddr="=".join(listaddr)
-            self.netaddr.setText(netaddr)
-            
-            listpic=picture.split("|")
-            url = (listpic[1].split(";"))[0]
-            #print(url)
-            
-            image_bytes =  urllib.request.urlopen(url).read()  
-            data_stream = io.BytesIO(image_bytes)
-            pil_image = Image.open(data_stream) 
-            
-            #pil_image = Image.open("1.jpg")
-            #self.image.setGeometry(0,0,800,800);  
-            pil_image_resize=pil_image.resize((100, 100),  Image.ANTIALIAS)
-            self.image.resize(100, 100)
-            #pil_image.show()
-            qt_image1 = ImageQt.ImageQt(pil_image_resize)  
-            #qt_image2 = QtGui.QImage(qt_image1)
-            pixmap = QtGui.QPixmap.fromImage(qt_image1)
-            
-            self.image.setPixmap(pixmap)
-        
-            print(url)
-        '''
+
         QtGui.QDesktopServices.openUrl(QtCore.QUrl(self.netaddr.text()))
         
         
@@ -205,13 +158,13 @@ class PyqtDemo(QDialog, Ui_PYQTDIALOG):
             #self.image.resize(100, 100)
             #pil_image.show()
             qt_image1 = ImageQt.ImageQt(pil_image_resize)  
-            qt_image2 = QtGui.QImage(qt_image1)
-            pixmap = QtGui.QPixmap.fromImage(qt_image2)
+            #qt_image2 = QtGui.QImage(qt_image1)
+            pixmap = QtGui.QPixmap.fromImage(qt_image1)
             
             self.image.setPixmap(pixmap)
         
             print(url)
-        #QtGui.QDesktopServices.openUrl(QtCore.QUrl(self.netaddr.text()))
+
         self.webView.load(QtCore.QUrl(netaddr))
         self.webView.showMaximized()
         

@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Tasks SYSTEM "Tasks-6.0.dtd">
 <!-- eric6 tasks file for project pyqtdemo -->
-<!-- Saved: 2017-01-19, 21:27:28 -->
+<!-- Saved: 2017-01-20, 22:34:20 -->
 <Tasks version="6.0">
   <ProjectScanFilter></ProjectScanFilter>
-  <Task priority="1" completed="False" type="1" uid="{20725284-16e2-47dc-9c13-e13df188eea2}">
+  <Task priority="1" completed="False" type="1" uid="{c574ac41-f811-4a1b-9884-89130b885c27}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2017-01-19, 21:26:09</Created>
+    <Created>2017-01-20, 22:34:12</Created>
     <Resource>
       <Filename>pyqtdemo.py</Filename>
       <Linenumber>39</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{7a5ba517-2cc8-435d-a6d2-cc13aca316ee}">
+  <Task priority="1" completed="False" type="1" uid="{47d56e28-1304-496c-b764-eb02f3758258}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2017-01-19, 21:26:09</Created>
+    <Created>2017-01-20, 22:34:12</Created>
     <Resource>
       <Filename>pyqtdemo.py</Filename>
       <Linenumber>51</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{3c7f7962-5771-43a8-b42b-b2104e7e1738}">
+  <Task priority="1" completed="False" type="1" uid="{284b8899-5641-4bd2-801d-01284c6e715e}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2017-01-19, 21:26:09</Created>
+    <Created>2017-01-20, 22:34:12</Created>
     <Resource>
       <Filename>pyqtdemo.py</Filename>
       <Linenumber>100</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{eaa3948f-6628-441c-ac46-7efd389fff6d}">
+  <Task priority="1" completed="False" type="1" uid="{8ebccd78-5f52-4013-bdef-311d7415528a}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2017-01-19, 21:26:09</Created>
+    <Created>2017-01-20, 22:34:12</Created>
     <Resource>
       <Filename>pyqtdemo.py</Filename>
-      <Linenumber>158</Linenumber>
+      <Linenumber>111</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="1" uid="{f193397f-d6dd-4227-828e-e4e09dce9740}">
+  <Task priority="1" completed="False" type="1" uid="{40e47b67-24dc-4828-bc6e-a863d34f8038}">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2017-01-19, 21:26:09</Created>
+    <Created>2017-01-20, 22:34:12</Created>
     <Resource>
       <Filename>pyqtdemo.py</Filename>
-      <Linenumber>223</Linenumber>
+      <Linenumber>176</Linenumber>
     </Resource>
   </Task>
 </Tasks>
